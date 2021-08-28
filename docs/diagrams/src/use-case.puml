@@ -1,0 +1,27 @@
+@startuml
+
+actor Участник as User
+actor Организатор as Admin
+package "Участие в мероприятиях" {
+  usecase "Регистрация" as (Participate)
+  usecase "Управление своими заявками" as (ManageOwnApplications)
+  usecase "Просмотр информации о мероприятии" as (BrowseEvents)
+  usecase "Просмотр сертификата" as (CheckCertificate)
+}
+package "Управление" {
+  usecase "Управление мероприятиями" as (ManageEvents)
+  usecase "Управление материалами участников" as (ManageMaterials)
+  usecase "Управление заявками" as (ManageApllications)
+  usecase "Управление сертификатами" as (ManageCertificates)
+
+}
+User --> (Participate)
+User --> (ManageOwnApplications)
+User --> (BrowseEvents)
+User --> (CheckCertificate)
+Admin --> (ManageEvents)
+Admin --> (ManageMaterials)
+Admin --> (ManageApllications)
+Admin --> (ManageCertificates)
+
+@enduml
