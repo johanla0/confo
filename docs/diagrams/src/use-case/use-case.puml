@@ -1,7 +1,7 @@
 @startuml
 left to right direction
-actor Участник as User
-actor Организатор as Admin
+actor/ Участник as User
+actor/ Организатор as Admin
 package "Участие в мероприятиях" {
   usecase "Регистрация в системе" as (SignUp)
   usecase "Регистрация на мероприятие" as (Participate)
@@ -13,6 +13,10 @@ package "Участие в мероприятиях" {
 }
 package "Управление" {
   usecase "Управление мероприятиями" as (ManageEvents)
+  usecase "Добавление мероприятия" as (AddEvent)
+  usecase "Изменение мероприятия" as (ChangeEvent)
+  usecase "Архивация мероприятия" as (ArchiveEvent)
+  usecase "Изменение секции" as (ChangeSection)
   usecase "Управление заявками" as (ManageApllications)
   usecase "Управление сертификатами" as (ManageCertificates)
   usecase "Управление докладами участников" as (ManageMaterials)
@@ -26,6 +30,10 @@ User --> (CheckCertificate)
 User --> (SubscribeToEvent)
 User --> (SubscribeToSection)
 Admin --> (ManageEvents)
+(ManageEvents) --> (AddEvent)
+(ManageEvents) --> (ChangeEvent)
+(ManageEvents) --> (ArchiveEvent)
+(ManageEvents) --> (ChangeSection)
 Admin --> (ManageMaterials)
 Admin --> (ManageApllications)
 Admin --> (ManageCertificates)

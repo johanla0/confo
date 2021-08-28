@@ -1,0 +1,6 @@
+@startuml AddEvent
+|Администратор|
+start
+:Заполнить форму нового мероприятия;
+stop
+@enduml

@@ -1,0 +1,12 @@
+@startuml AddModifySection
+|Администратор|
+start
+split
+  while (Добавить секцию?) is (да)
+    :Заполнить форму новой секции;
+  endwhile (нет)
+split again
+  :Изменить существующую секцию;
+end split
+stop
+@enduml

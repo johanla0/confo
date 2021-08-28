@@ -1,0 +1,10 @@
+@startuml ArchiveEvent
+|Администратор|
+start
+fork
+  :Архивировать мероприятие;
+fork again
+  :Автоматическая архивация по окончанию мероприятия;
+end merge
+stop
+@enduml

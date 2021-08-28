@@ -1,0 +1,22 @@
+@startuml ManageApllications
+|Администратор|
+start
+:Просмотреть список заявок;
+:Выбрать заявку;
+if (Новая заявка?) then (да)
+  split
+    :Подтвердить;
+  split again
+    :Отказать;
+  end split
+else (нет)
+  split
+    #Plum:Изменить заявку|
+  split again
+    #Plum:Выдать сертификат|
+  split again
+    :Экспортировать текст доклада;
+  end split
+endif
+stop
+@enduml

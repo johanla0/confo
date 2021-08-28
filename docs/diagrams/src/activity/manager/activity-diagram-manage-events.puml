@@ -1,0 +1,26 @@
+@startuml BrowseEvents
+|Администратор|
+start
+if (Администратор знает логин/пароль?) then (да)
+  :Ввести данные, выполнить вход;
+else (нет)
+  #Orange:Обратиться к разработчику|
+  detach
+endif
+:Просмотреть список мероприятий;
+split
+  #Plum:Добавление мероприятия|
+split again
+  :Выбрать мероприятие;
+split
+  #Plum:Архивация мероприятия|
+split again
+  #Plum:Изменение мероприятия|
+split again
+  #Plum:Управление заявками|
+split again
+  #Plum:Экспортировать данные|
+end split
+end split
+stop
+@enduml

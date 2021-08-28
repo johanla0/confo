@@ -1,0 +1,15 @@
+@startuml ModifyApllication
+|Администратор|
+start
+split
+    :Изменить секцию;
+  split again
+    :Изменить ключевые слова;
+  split again
+    :Изменить название;
+    |#AntiqueWhite|Пользователь|
+    :Подтвердить;
+    |Администратор|
+end split
+stop
+@enduml

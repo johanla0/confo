@@ -1,0 +1,10 @@
+@startuml ModifyEvent
+|Администратор|
+start
+split
+  :Изменить данные существующего мероприятия;
+split again
+  #Plum:Добавление или изменение секций|
+end split
+stop
+@enduml
