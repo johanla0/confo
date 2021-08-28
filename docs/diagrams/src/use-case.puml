@@ -1,27 +1,34 @@
 @startuml
-
+left to right direction
 actor Участник as User
 actor Организатор as Admin
 package "Участие в мероприятиях" {
-  usecase "Регистрация" as (Participate)
+  usecase "Регистрация в системе" as (SignUp)
+  usecase "Регистрация на мероприятие" as (Participate)
   usecase "Управление своими заявками" as (ManageOwnApplications)
   usecase "Просмотр информации о мероприятии" as (BrowseEvents)
   usecase "Просмотр сертификата" as (CheckCertificate)
+  usecase "Подписка на мероприятие" as (SubscribeToEvent)
+  usecase "Подписка на секцию" as (SubscribeToSection)
 }
 package "Управление" {
   usecase "Управление мероприятиями" as (ManageEvents)
-  usecase "Управление материалами участников" as (ManageMaterials)
   usecase "Управление заявками" as (ManageApllications)
   usecase "Управление сертификатами" as (ManageCertificates)
-
+  usecase "Управление докладами участников" as (ManageMaterials)
+  usecase "Экспорт данных" as (ExportData)
 }
+User --> (SignUp)
 User --> (Participate)
 User --> (ManageOwnApplications)
 User --> (BrowseEvents)
 User --> (CheckCertificate)
+User --> (SubscribeToEvent)
+User --> (SubscribeToSection)
 Admin --> (ManageEvents)
 Admin --> (ManageMaterials)
 Admin --> (ManageApllications)
 Admin --> (ManageCertificates)
+Admin --> (ExportData)
 
 @enduml
